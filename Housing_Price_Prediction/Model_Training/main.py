@@ -5,43 +5,42 @@ import argparse
 import pandas as pd
 import numpy as np
 import os
-from housing_price_predictor import HousingPricePredictor
+from config_loader import load_config
+from model_initializer import initialize_model, model_mapping, hyperparameters_grid
+from training import train_model
+from model_saver import save_model
+from evaluator import evaluate_model
 
 def main(config_file):
-    # Initialize the predictor class
-    predictor = HousingPricePredictor()
+    # Load configuration
+    config = load_config(config_file, hyperparameters_grid)
 
-    # Load the configuration from the file
-    config = predictor.load_config(config_file)
-
-    # Dynamically set the paths for training and labels data
-    dataset_name = os.path.basename(config_file).split('.')[0]  # Extracts 'california' from 'california.cfg'
-    processed_data_dir = os.path.join("processed_data", f"{dataset_name}_housing")
-
-    config['training_data_path'] = os.path.join(processed_data_dir, f"{dataset_name}_housing_prepared.csv")
-    config['labels_data_path'] = os.path.join(processed_data_dir, f"{dataset_name}_housing_labels.csv")
+    # Get paths for training and labels data from the configuration
+    training_data_path = config['training_data_path']
+    labels_data_path = config['labels_data_path']
 
     # Check if the paths exist
-    if not os.path.exists(config['training_data_path']):
-        raise FileNotFoundError(f"Training data file '{config['training_data_path']}' does not exist.")
-    if not os.path.exists(config['labels_data_path']):
-        raise FileNotFoundError(f"Labels data file '{config['labels_data_path']}' does not exist.")
+    if not os.path.exists(training_data_path):
+        raise FileNotFoundError(f"Training data file '{training_data_path}' does not exist.")
+    if not os.path.exists(labels_data_path):
+        raise FileNotFoundError(f"Labels data file '{labels_data_path}' does not exist.")
 
     # Load the training data
-    train_set = pd.read_csv(config['training_data_path'])
-    train_labels = pd.read_csv(config['labels_data_path'])
+    train_set = pd.read_csv(training_data_path)
+    train_labels = pd.read_csv(labels_data_path).values.ravel()  # Convert DataFrame to 1D array
 
-    # Extract model name, CV folds, and hyperparameters from config
-    model_name = config['model_name']
-    cv_folds = config['cv_folds']
-    hyperparameters = config['hyperparameters']
+    # Initialize the model with hyperparameters
+    model = initialize_model(config['model_name'], model_params=config.get('hyperparameters'))
 
-    # Fit and save the model based on the loaded config
-    best_model, best_params, cv_results = predictor.fit_and_save(model_name, train_set, train_labels, hyperparameters, cv=cv_folds)
+    # Train the model
+    trained_model = train_model(model, train_set, train_labels, param_grid=config.get('hyperparameters'), cv=config['cv_folds'])
 
-    # (Optional) Predict with the fitted model immediately
-    # input_data = ...  # Load or prepare input data for predictions
-    # predictions, errors = predictor.predict(input_data)
+    # Save the trained model
+    model_save_path = os.path.join("saved_model_params_cvres", f"{config['model_name']}_model.pkl")
+    save_model(trained_model, config.get('hyperparameters'), None, config['model_name'], dir_path="saved_model_params_cvres")
+
+    # Print a message indicating successful training and saving
+    print(f"Model training and saving completed successfully. Model saved at '{model_save_path}'.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run housing price prediction model with config file.")
