@@ -37,10 +37,16 @@ def load_config(config_file_path, hyperparameters_grid):
                     try:
                         config['hyperparameters'][param_name] = [float(value)]
                     except ValueError:
-                        config['hyperparameters'][param_name] = [value]
+                        if value.lower() == 'true':
+                            config['hyperparameters'][param_name] = [True]
+                        elif value.lower() == 'false':
+                                config['hyperparameters'][param_name] = [False]
+                        else:
+                            config['hyperparameters'][param_name] = [value]
 
     if config['model_name'] in hyperparameters_grid:
         for param, default_values in hyperparameters_grid[config['model_name']].items():
-            config['hyperparameters'].setdefault(param, default_values if isinstance(default_values, list) else [default_values])
+            if param not in config['hyperparameters']:
+                config['hyperparameters'][param] = default_values if not isinstance(default_values, list) else default_values[0]
 
     return config
