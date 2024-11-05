@@ -29,7 +29,7 @@ etl:
 # Run the ML training process
 ml:
 	@echo "Running ML training pipeline..."
-	python3 $(ML_DIR)/main.py $(CONFIG_DIR)/$(CONFIG_FILE)
+	PYTHONPATH=. python3 $(ML_DIR)/main.py -c $(CONFIG_DIR)/$(CONFIG_FILE)
 	@echo "ML training completed."
 
 # Clean up generated model and result files
