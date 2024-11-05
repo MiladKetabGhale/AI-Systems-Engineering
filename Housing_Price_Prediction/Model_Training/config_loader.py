@@ -3,24 +3,36 @@
 import os
 
 def parse_value(value):
-    """Parses individual configuration values, handling lists if needed."""
-    if ',' in value:
-        return [parse_value(v.strip()) for v in value.split(',')]
+    """
+    Parse a configuration value, converting it to a list of integers or floats if applicable.
+    """
     try:
-        return float(value) if '.' in value else int(value)
+        # If the value contains commas, split into a list
+        if ',' in value:
+            return [parse_single_value(v.strip()) for v in value.split(',')]
+        else:
+            return parse_single_value(value)  # Return a single value
     except ValueError:
-        return value
+        return value  # Leave as a string if it's not a number
 
+def parse_single_value(value):
+    """
+    Parse a single configuration value to its appropriate type.
+    """
+    value = value.strip().lower()  # Normalize the string
+    if value in ['true', 'false']:
+        return value == 'true'  # Convert to boolean
+    try:
+        return float(value) if '.' in value else int(value)  # Return as number
+    except ValueError:
+        return value  # Leave as string if conversion fails
+    
 def load_config(config_file_path):
     """Loads and parses configuration from a file, returning a dictionary."""
     config = {
         'cv': None,
         'model_name': None,
-        'ensemble_training': False,
-        'ensemble_name': None,
-        'ensemble_base_model': None,
-        'ensemble_params': {},
-        'base_params': {},
+        'model_params': {},
         'training_data_path': None,
         'labels_data_path': None,
         'save_predictive_evaluations': False,
@@ -42,49 +54,29 @@ def load_config(config_file_path):
             # Parse key-value pairs
             if key == "cv":
                 config['cv'] = int(value)
-            elif key == "model_name":
+            elif key == "model":
                 config['model_name'] = value.lower()
-            elif key == "ensemble_training":
-                config['ensemble_training'] = value.lower() == 'true'
-            elif key == "ensemble_name":
-                config['ensemble_name'] = value.lower()
-            elif key == "ensemble_base_model":
-                config['ensemble_base_model'] = value.lower()
             elif key == "training_data_path":
                 config['training_data_path'] = value
             elif key == "labels_data_path":
                 config['labels_data_path'] = value
             elif key == "save_predictive_evaluations":
                 config['save_predictive_evaluations'] = value.lower() == 'true'
-            elif key.startswith("ensemble_"):
-                param_name = key[len("ensemble_"):].strip()
-                config['ensemble_params'][param_name] = parse_value(value)
-            elif key.startswith("base_model_hyperparameters_"):
-                param_name = key[len("base_model_hyperparameters_"):].strip()
-                config['base_params'][param_name] = parse_value(value)
+            elif key.startswith("model_"):
+                param_name = key[len("model_"):].strip()
+                config['model_params'][param_name] = parse_value(value)
 
-    # Determine training_type based on cv and ensemble settings
-    if config['ensemble_training']:
-        config['training_type'] = "ensemble"  # Ensemble training
-    elif config['cv'] > 1:
+    # Determine training_type based on cv settings
+    if config['cv'] > 1:
         config['training_type'] = "gridsearch"  # Grid search
     else:
         config['training_type'] = "simplefit"  # Simple fit without grid search
-
-    # Debugging output to confirm all expected keys are present
-    print("Config loaded with keys:", config.keys())
-    print("Config content:", config)
-
     # Validation check
     if not config['training_data_path'] or not config['labels_data_path']:
         raise ValueError("Both 'training_data_path' and 'labels_data_path' must be specified in the configuration file.")
     if config['cv'] is None:
         raise ValueError("'cv' must be specified in the configuration file.")
-    if config['ensemble_training']:
-        if not config['ensemble_name'] or not config['ensemble_base_model']:
-            raise ValueError("If 'ensemble_training' is enabled, 'ensemble_name' and 'ensemble_base_model' must be specified.")
-    else:
-        if not config['model_name']:
-            raise ValueError("If 'ensemble_training' is disabled, 'model_name' must be specified.")
+    if not config['model_name']:
+        raise ValueError("If 'ensemble_training' is disabled, 'model_name' must be specified.")
 
     return config
