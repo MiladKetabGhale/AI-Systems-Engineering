@@ -5,6 +5,10 @@ import os
 def parse_value(value):
     """
     Parse a configuration value, converting it to a list of integers or floats if applicable.
+    Args:
+        value (str): The configuration value to parse.
+    Returns:
+        list or str: A list of parsed integers or floats if value contains commas, otherwise a single value.
     """
     try:
         # If the value contains commas, split into a list
@@ -18,6 +22,10 @@ def parse_value(value):
 def parse_single_value(value):
     """
     Parse a single configuration value to its appropriate type.
+    Args:
+        value (str): The single configuration value to parse.
+    Returns:
+        int, float, bool, or str: The parsed value, converted to int, float, boolean, or left as string if conversion fails.
     """
     value = value.strip().lower()  # Normalize the string
     if value in ['true', 'false']:
@@ -28,7 +36,13 @@ def parse_single_value(value):
         return value  # Leave as string if conversion fails
     
 def load_config(config_file_path):
-    """Loads and parses configuration from a file, returning a dictionary."""
+    """
+    Loads and parses configuration from a file, returning a dictionary.
+    Args:
+        config_file_path (str): The path to the configuration file to load.
+    Returns:
+        dict: A dictionary containing the parsed configuration.
+    """
     config = {
         'cv': None,
         'model_name': None,
@@ -41,7 +55,7 @@ def load_config(config_file_path):
 
     if not os.path.exists(config_file_path):
         raise FileNotFoundError(f"Configuration file '{config_file_path}' does not exist.")
-
+    # Read the configuration file line by line
     with open(config_file_path, 'r') as file:
         for line in file:
             line = line.split('#', 1)[0].strip()  # Remove comments

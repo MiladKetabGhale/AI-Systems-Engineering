@@ -6,6 +6,16 @@ from datetime import datetime
 import os
 
 def evaluate_model(model, config, X_test, y_test):
+    """
+    Evaluates the model on the test data and logs metrics to MLflow.
+    Args:
+        model: The trained model to evaluate.
+        config (dict): The configuration dictionary containing settings for evaluation.
+        X_test: The features of the test dataset.
+        y_test: The true labels of the test dataset.
+    Returns:
+        tuple: Predictions from the model and a dictionary of evaluation metrics.
+    """
     print("Generating predictions...")
     predictions = model.predict(X_test)
 
@@ -16,12 +26,12 @@ def evaluate_model(model, config, X_test, y_test):
         'r2_score': r2_score(y_test, predictions)
     }
 
-    with mlflow.start_run(nested=True):
+    with mlflow.start_run(nested=True):                    # Start an MLflow run for logging
         mlflow.log_metrics(evaluation_metrics)
         print("Evaluation metrics logged to MLflow.")
     
     if config.get('save_predictive_evaluations', False):
-        eval_dir = "cvResults_bestModels"
+        eval_dir = "cvResults_bestModels"                  # Directory to save evaluation metrics
         os.makedirs(eval_dir, exist_ok=True)
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         eval_filename = f"predictive_evaluations_{model.__class__.__name__}_{timestamp}.json"

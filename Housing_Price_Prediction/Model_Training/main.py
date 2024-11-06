@@ -7,6 +7,15 @@ from train_model import train_model
 from evaluation import evaluate_model
 
 def main(config_path):
+    """
+    Main entry point for the machine learning pipeline.
+
+    Args:
+        config_path (str): The path to the configuration file.
+    
+    Returns:
+        None
+    """
     mlflow.set_experiment("Housing Price Prediction")
     
     with mlflow.start_run(run_name="Full Pipeline") as parent_run:

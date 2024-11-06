@@ -26,6 +26,12 @@ MODEL_CLASSES = {
 def initialize_model(config):
     """
     Initializes the model based on the configuration and prepares it for training with or without GridSearchCV.
+    
+    Args:
+        config (dict): The configuration dictionary containing model name and parameters.
+    
+    Returns:
+        tuple: The initialized model and the parameter grid for GridSearchCV if applicable.
     """
     model_name = config['model_name']
     if model_name not in MODEL_CLASSES:

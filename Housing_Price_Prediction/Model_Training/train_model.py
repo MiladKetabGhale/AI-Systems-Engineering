@@ -10,12 +10,24 @@ import os
 import json
 
 def train_model(model, config, X_train, y_train):
-    param_grid = config['model_params']  # Use model_params for hyperparameters
+    """
+    Trains the model using the specified configuration and data.
+
+    Args:
+        model: The model instance to train.
+        config (dict): Configuration dictionary containing model parameters and settings.
+        X_train: Training feature data.
+        y_train: Training label data.
+    
+    Returns:
+        tuple: Best estimator, best parameters, and cross-validation results.
+    """
+    param_grid = config['model_params']                  # Use model_params for hyperparameters
 
     # Ensure single value parameters are wrapped in a list
     for key in param_grid.keys():
         if isinstance(param_grid[key], (int, float)):
-            param_grid[key] = [param_grid[key]]  # Wrap in a list if it's a single value
+            param_grid[key] = [param_grid[key]]          # Wrap in a list if it's a single value
 
     with mlflow.start_run(nested=True):
         print("Performing GridSearchCV with cross-validation." if config['cv'] > 1 else "Training model without grid search.")
@@ -39,7 +51,15 @@ def train_model(model, config, X_train, y_train):
 
 def save_training_artifacts(model, best_params=None, cv_results=None):
     """
-    Saves the model, parameters, and cv_results (if available) to the specified directory.
+    Saves the model, parameters, and cross-validation results (if available) to the specified directory.
+
+    Args:
+        model: The trained model to save.
+        best_params (dict, optional): The best parameters from training.
+        cv_results (dict, optional): Cross-validation results from training.
+    
+    Returns:
+        None
     """
     results_dir = "cvResults_bestModels"
     os.makedirs(results_dir, exist_ok=True)
