@@ -16,7 +16,7 @@ def main(config_path):
         # Load training and test data
         X_train = pd.read_csv(config['training_data_path'])
         y_train = pd.read_csv(config['labels_data_path']).values.ravel()
-        X_test = X_train
+        X_test = X_train  # Use train data as test data if no separate test data is provided
         y_test = y_train
 
         # Initialize model and parameter grid

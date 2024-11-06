@@ -71,12 +71,17 @@ def load_config(config_file_path):
         config['training_type'] = "gridsearch"  # Grid search
     else:
         config['training_type'] = "simplefit"  # Simple fit without grid search
+
+    # Debugging output to confirm all expected keys are present
+    print("Config loaded with keys:", config.keys())
+    print("Config content:", config)
+
     # Validation check
     if not config['training_data_path'] or not config['labels_data_path']:
         raise ValueError("Both 'training_data_path' and 'labels_data_path' must be specified in the configuration file.")
     if config['cv'] is None:
         raise ValueError("'cv' must be specified in the configuration file.")
     if not config['model_name']:
-        raise ValueError("If 'ensemble_training' is disabled, 'model_name' must be specified.")
+        raise ValueError("A model must be specified for training.")
 
     return config
