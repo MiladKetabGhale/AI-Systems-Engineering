@@ -1,47 +1,65 @@
-import argparse
-import mlflow
+# main.py
+
+# Import necessary functions
+from parser import parse_config, get_model_class
+from training import train_model, evaluate_model, create_results_directory, save_run_summary
 import pandas as pd
-from config_loader import load_config
-from initialize_model import initialize_model
-from train_model import train_model
-from evaluation import evaluate_model
 
-def main(config_path):
-    """
-    Main entry point for the machine learning pipeline.
+# Step 1: Parse configuration file
+parsed_data = parse_config("config.yaml")
 
-    Args:
-        config_path (str): The path to the configuration file.
-    
-    Returns:
-        None
-    """
-    mlflow.set_experiment("Housing Price Prediction")
-    
-    with mlflow.start_run(run_name="Full Pipeline") as parent_run:
-        config = load_config(config_path)
-        mlflow.log_params(config)
+# Step 2: Load data using paths from parsed_data
+X_train = pd.read_csv(parsed_data["paths"]["training_data"])
+y_train_get = pd.read_csv(parsed_data["paths"]["training_labels"])
 
-        # Load training and test data
-        X_train = pd.read_csv(config['training_data_path'])
-        y_train = pd.read_csv(config['labels_data_path']).values.ravel()
-        X_test = X_train  # Use train data as test data if no separate test data is provided
-        y_test = y_train
+y_train = y_train_get.values.ravel()
 
-        # Initialize model and parameter grid
-        model, param_grid = initialize_model(config)
+# Split data into training and test sets
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-        # Train model with or without GridSearchCV based on cv value
-        with mlflow.start_run(run_name="Training and Evaluation", nested=True):
-            trained_model, best_params, cv_results = train_model(model, config, X_train, y_train)
+# Step 3: Create results directory based on model name, metrics, and timestamp
+results_path = create_results_directory(
+    model_name=parsed_data["model_name"],
+    evaluation_metrics=parsed_data["evaluation_metric"]
+)
 
-        # Evaluate model
-        with mlflow.start_run(run_name="Model Evaluation", nested=True):
-            predictions, evaluation_metrics = evaluate_model(trained_model, config, X_test, y_test)
-            mlflow.log_metrics(evaluation_metrics)
+# Step 4: Initialize the model using the model name from parsed_data
+model_class = get_model_class(parsed_data["model_name"])
+model = model_class()
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run the ML pipeline with a specified config file.")
-    parser.add_argument("-c", "--config", required=True, help="Path to the configuration file")
-    args = parser.parse_args()
-    main(args.config)
+# Step 5: Train the model
+# We pass individual values from parsed_data into train_model
+best_model, best_params, cv_results = train_model(
+    model_name=parsed_data["model_name"],   # Pass model name
+    model=model,                            # Pass the initialized model
+    X_train=X_train,                        # Training features
+    y_train=y_train,                        # Training labels
+    param_grid=parsed_data["param_grid"],   # Pass hyperparameter grid
+    cv=parsed_data["cv"],                   # Cross-validation setting
+    evaluation_metrics=parsed_data["evaluation_metric"]
+)
+
+# Step 6: Evaluate the model
+# Pass individual values from parsed_data into evaluate_model
+metrics = evaluate_model(
+    model=best_model,                                     # The trained model from train_model
+    X_test=X_train,                                       # Test features
+    y_test=y_train,                                       # Test labels
+    results_path=parsed_data["paths"]["results"],         # Results path from parsed_data
+    model_name=parsed_data["model_name"],                 # Model name
+    evaluation_metrics=parsed_data["evaluation_metric"],  # parsed evaluation metrics to use
+    best_params=best_params,                              # Best parameters from GridSearchCV
+    cv_results=cv_results                                 # Cross-validation results from GridSearchCV
+)
+
+# Step 7: Save run summary in the results directory
+save_run_summary(
+    results_path=results_path,
+    model_name=parsed_data["model_name"],
+    evaluation_metrics=parsed_data["evaluation_metric"],
+    best_params=best_params,
+    metrics=metrics
+)
+
+# Print the evaluation metrics
+print("Training and evaluation completed. Metrics:", metrics)
