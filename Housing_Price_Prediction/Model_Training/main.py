@@ -81,8 +81,8 @@ y_test = y_test_get.values.ravel()
 # Pass individual values from parsed_data into evaluate_model
 metrics = evaluate_model(
     model=best_model,                                     # The trained model from train_model
-    X_test=X_train,                                       # Test features
-    y_test=y_train,                                       # Test labels
+    X_test=X_test,                                       # Test features
+    y_test=y_test,                                       # Test labels
     results_path=parsed_data["paths"]["results"],         # Results path from parsed_data
     model_name=parsed_data["model_name"],                 # Model name
     evaluation_metrics=parsed_data["evaluation_metric"],  # parsed evaluation metrics to use
