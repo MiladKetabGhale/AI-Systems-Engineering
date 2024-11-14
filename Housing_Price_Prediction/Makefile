@@ -4,6 +4,7 @@
 CONFIG_DIR = Config_Files
 ETL_DIR = Housing_Data_Processing
 ML_DIR = Model_Training
+PROCESSED_DATA_DIR = processed_data
 PARSER_DIR = Parser
 
 # Targets
@@ -34,5 +35,6 @@ ml:
 clean:
 	@echo "Cleaning up saved models and results..."
 	rm -rf $(ML_DIR)/saved_model_params_cvres/*
+	rm -rf $(PROCESSED_DATA_DIR)/*
 	@echo "Cleanup completed."
 
