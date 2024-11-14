@@ -47,7 +47,10 @@ class CaliforniaHousingTransformation(BaseDataTransformation):
         self.housing = strat_train_set.drop("median_house_value", axis=1)
         self.housing_labels = strat_train_set["median_house_value"].copy()
         
-        return self.housing, self.housing_labels
+        self.housing_test = strat_test_set.drop("median_house_value", axis=1)
+        self.housing_labels_test = strat_test_set["median_house_value"].copy()
+        
+        return self.housing, self.housing_labels, self.housing_test, self.housing_labels_test
 
     def transform_features(self, data):
         """Applies California housing-specific transformations and feature scaling."""
