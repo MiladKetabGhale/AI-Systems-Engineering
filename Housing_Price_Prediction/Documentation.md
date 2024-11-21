@@ -8,11 +8,12 @@ This project is a modular, end-to-end pipeline system designed for predicting ho
 
 ## System Topology
 
-The system consists of two main components:
+The system consists of five main components:
 
 1. **Configuration Component**: Enables customization of the system through a YAML configuration file. Users can specify data paths, transformation logic, models, hyperparameters, evaluation metrics, and more. This component ensures flexibility and allows the system to adapt to various datasets and use cases without code modifications.
 2. **Parsing Component**: Located in Parser, it parses and validates the configuration file. It also includes robust error handling for missing or invalid configurations. This component ensures the integrity of inputs and prepares the system for execution.
 3. **Preprocessing Component (ETL)**: Located in `Housing_Data_Processing`, it handles data ingestion, transformation, and storage.
+4. **Transformation Logic**: The user must provide their specific business transformation logic module. The system automatically then finds and builds based on this specification by instantiating the generic transformation logic.
 4. **ML Training Component**: Located in `Model_Training`, it trains machine learning models, evaluates their performance, and saves results.
 ---
 
@@ -93,7 +94,13 @@ Located in `Housing_Data_Processing`, this component manages ETL processes, incl
 
 ---
 
-### 4. ML Training Component
+### 4. Transformation Logic
+
+The user must specify their desired transformation logic for the system to apply in order to complete the ETL on the ingested dataset which the user has specified. At the moment, the system has one example of a specific transformation logic implemented for the Claifornia Housing Dataset.
+
+---
+
+### 5. ML Training Component
 
 Located in `Model_Training`, this component handles model training, evaluation, and result saving. It includes:
 
