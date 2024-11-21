@@ -1,0 +1,47 @@
+{
+    "paths": {
+        "training_data": "/path/to/training_data.csv",
+        "training_labels": "/path/to/training_labels.csv",
+        "results": "/path/to/results_directory"
+    },
+    
+    "model_config": {
+        "model_name": [
+            // Uncomment the model you want to use:
+            //"RandomForestRegressor",
+            //"LinearRegression",
+            //"Ridge",
+            //"Lasso",
+            //"SVR",
+            "GradientBoostingRegressor"
+            //"XGBoostRegressor",
+            //"KNeighborsRegressor",
+            //"DecisionTreeRegressor",
+            //"AdaBoostRegressor"
+        ],
+        
+        "cv": 5,
+        
+        "model_hyperparameters": {
+            "GradientBoostingRegressor": {
+                // Uncomment desired hyperparameters and set values:
+                "n_estimators": [100, 200, 300],
+                "learning_rate": [0.01, 0.1],
+                "subsample": 0.8,
+                //"criterion": "friedman_mse",
+                "min_samples_split": 2,
+                //"min_samples_leaf": 1,
+                "max_depth": [3, 5, 7],
+                //"max_features": "auto",
+                //"random_state": 42,
+                //"warm_start": false
+            },
+            "RandomForestRegressor": {
+                // Example model with parameters, commented out
+                //"n_estimators": 100,
+                //"max_depth": null
+            }
+        }
+    }
+}
+
