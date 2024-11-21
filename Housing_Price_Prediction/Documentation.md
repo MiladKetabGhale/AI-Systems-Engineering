@@ -109,3 +109,36 @@ Located in `Model_Training`, this component handles model training, evaluation, 
   - Initializes, trains, and evaluates the model.
   - Saves evaluation results and best model parameters.
 
+---
+
+## How to Build and Run the System
+
+The system supports multiple commands for running different phases of the pipeline. These commands should be executed in the terminal from the root directory of the project.
+
+### 1. **Run the Full ETL and ML Pipeline**
+
+To execute both the ETL and Machine Learning pipelines sequentially, use:
+
+```bash
+make all CONFIG_FILE=your_config.yaml
+```
+### 2. **Run Only the ETL Pipeline**
+
+To preprocess the data using the ETL pipeline, use:
+```bash
+make etl CONFIG_FILE=your_config.yaml
+```
+### 3. **Run Only the ML Training Pipeline**
+
+To train and evaluate the ML model, use:
+
+```bash
+make ml CONFIG_FILE=your_config.yaml
+```
+### 4. **Clean Up Generated Files**
+
+To reset the workspace by removing all generated datasets, logs, and results, use:
+
+```bash
+make clean
+```
