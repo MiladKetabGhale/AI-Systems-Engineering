@@ -1,6 +1,6 @@
 # Data Science, Machine Learning Engineering, and Data Engineering Projects
 
-Welcome to my portfolio of projects, designed to demonstrate my skills and expertise in **machine learning**, **data analysis**, **ML engineering**, and **data engineering**. This repository contains standalone projects, each showcasing a specific set of capabilities, methodologies, and tools. The projects highlight my ability to build end-to-end data pipelines, engineer scalable solutions, and solve complex analytical problems.
+Welcome to my portfolio of projects, designed to demonstrate my skills in **machine learning engineering**, **data science**, **data engineering**, and elements of **data analysis**. This repository contains standalone projects, each showcasing a specific set of capabilities, methodologies, and tools. The projects highlight my ability to build end-to-end data pipelines, engineer scalable solutions, and solve complex analytical problems.
 
 ## Repository Structure
 
@@ -9,17 +9,19 @@ Each project is organized into a separate folder containing all relevant code, d
 ### 1. Housing Price Prediction
 - **Focus**: End-to-end pipeline for predicting housing prices using regression models.
 - **Key Features**:
-  - Data preprocessing, transformation, and cleaning.
-  - Hyperparameter tuning and performance evaluation.
-  - Modular design with CI/CD and Dockerization.
+  - Automated ingestion, transformation, extraction, model training, and evaluation for house price prediction.
+  - Highly configurable custom ETL logic, model selection, and evaluation metrics via configuration files.
+  - Robust parsing, and dynamic data handling, error logging, and CI/CD integration
+  - Scalable and extensible modular architecture for production-ready deployment
 
 ### 2. EMNIST Classification Project *(upcoming)*
 - **Focus**: Tackling classification challenges on the EMNIST dataset.
 - **Key Features**:
-  - Exploratory data analysis (EDA) and visualization.
-  - Implementation of various machine learning models (e.g., SVMs, ensemble methods).
-  - Handling class imbalance and hyperparameter tuning.
-  - Performance evaluation with metrics like precision, recall, and ROC curves.
+    - Statistical analysis and visualization to uncover patterns and feature relationships
+    - Training, evaluation, and tunning multiple classifiers to establish performance benchmarks
+    - Producing top classifer using ensemble techniuqes against classification performance metrics
+    - Feature selection and parallel training to handle costly computational complexity of some models
+    - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques
 
 ### 3. Anomaly Detection *(upcoming in December)*
 - **Focus**: Fraud detection in financial data using anomaly detection techniques.
