@@ -25,14 +25,7 @@ Each project is organized into a separate folder containing all relevant code, d
 
 ### 3. Anomaly Detection *(upcoming in December)*
 - **Focus**: Fraud detection in financial data using anomaly detection techniques.
-- **Key Features**:
-  - Statistical analysis and visualization.
-  - Identification of anomalies using machine learning methods.
 
 ### 4. Fully Automated Pipelined System For Anomaly Detection Using AWS, Spark, and Boto3 *(upcoming in December)*
-- **Focus**: Integrating AWS services and Spark to build scalable pipelines for anomaly detection.
-- **Key Features**:
-  - Distributed data processing with Spark.
-  - Interaction with AWS services (e.g., S3, Lambda, Athena) using Boto3.
-  - Showcase of ML engineering and data engineering expertise.
+- **Focus**: Integrating AWS services and Spark to build scalable pipelines for anomaly detection
 
