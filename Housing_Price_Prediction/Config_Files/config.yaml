@@ -1,15 +1,11 @@
 paths:
-  training_data: "" 
-  #"/home/milad/ML_PATH/my_env/housing_price_predictions/tempoDir/EngineeringAnalysisData_ML/Housing_Price_Prediction/cleanDatasets/housing_prepared.csv/dataset_prepared.csv"  # Mandatory: Path to input training data
+  training_data: ""    # Mandatory: Path to input training data
   
-  training_labels: "" 
-  #"/home/milad/ML_PATH/my_env/housing_price_predictions/tempoDir/EngineeringAnalysisData_ML/Housing_Price_Prediction/cleanDatasets/housing_prepared.csv/dataset_labels.csv"  # Mandatory: Path to input training labels
+  training_labels: ""  # Mandatory: Path to input training labels
   
   testing_data: "" 
-  #"/home/milad/ML_PATH/my_env/housing_price_predictions/tempoDir/EngineeringAnalysisData_ML/Housing_Price_Prediction/cleanDatasets/california_housing_transformation_test.csv"
   
   testing_labels: "" 
-  #"/home/milad/ML_PATH/my_env/housing_price_predictions/tempoDir/EngineeringAnalysisData_ML/Housing_Price_Prediction/cleanDatasets/california_housing_transformation_test_labels.csv"
   
   results: "."  # Optional: Path for saving training and evaluation results
 
