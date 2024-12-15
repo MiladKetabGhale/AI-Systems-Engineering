@@ -24,8 +24,11 @@ Each project is organized into a separate folder containing all relevant code, d
     - Feature selection and parallel training to handle costly computational complexity of some models
     - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques
 
-### 3. Fully Automated Pipelined System For Anomaly Detection Using AWS, Spark, and Boto3 *(upcoming in December)*
+### 3. Fully Automated Pipelined System For Anomaly Detection Using AWS, Spark, and Boto3 *(upcoming in January)*
 - **Focus**: Integrating AWS services with Spark using Botot3 to build scalable, automated pipelines for anomaly detection
 
-### 4. Survival Analysis Using Healthcare Dataset *(upcoming in December)*
+### 4. Survival Analysis Using Healthcare Dataset *(upcoming in February)*
 - **Focus**: Focuses on use of advanced statistical analysis frameworks and tools in combination with real and synthetic healthcare data for survival analysis.
+
+## License
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE).
