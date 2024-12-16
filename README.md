@@ -31,4 +31,4 @@ Each project is organized into a separate folder containing all relevant code, d
 - **Focus**: Focuses on use of advanced statistical analysis frameworks and tools in combination with real and synthetic healthcare data for survival analysis.
 
 ## License
-This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE).
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/deed.en).
