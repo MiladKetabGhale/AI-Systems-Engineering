@@ -18,14 +18,14 @@ Each project is organized into a separate folder containing all relevant code, d
 - **Focus**: Tackling classification challenges on the EMNIST dataset.
 - **Key Features**:
     - Statistical analysis and visualization to uncover patterns and feature relationships
-    - Training, evaluation, and tunning multiple classifiers to establish performance benchmarks
-    - thorough error analysis including tools such as SHAP and Barier scores. Detailed timing analysis for model training
-    - Producing top classifer using ensemble techniuqes against classification performance metrics
+    - Training, evaluation, and tuning multiple classifiers to establish performance benchmarks
+    - thorough error analysis including tools such as SHAP and Brier scores. Detailed timing analysis for model training
+    - Producing top classifer using ensemble techniques against classification performance metrics
     - Feature selection and parallel training to handle costly computational complexity of some models
     - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques
 
 ### 3. Fully Automated Pipelined System For Anomaly Detection Using AWS, Spark, and Boto3 *(upcoming in January)*
-- **Focus**: Integrating AWS services with Spark using Botot3 to build scalable, automated pipelines for anomaly detection
+- **Focus**: Integrating AWS services with Spark using Boto3 to build scalable, automated pipelines for anomaly detection
 
 ### 4. Survival Analysis Using Healthcare Dataset *(upcoming in February)*
 - **Focus**: Focuses on use of advanced statistical analysis frameworks and tools in combination with real and synthetic healthcare data for survival analysis.
