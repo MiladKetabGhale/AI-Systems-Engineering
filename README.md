@@ -14,7 +14,7 @@ Each project is organized into a separate folder containing all relevant code, d
   - Robust parsing, and dynamic data handling, error logging, and CI/CD integration
   - Scalable and extensible modular architecture for production-ready deployment
 
-### 2. EMNIST Classification Project *(upcoming)*
+### 2. EMNIST Classification Project
 - **Focus**: Tackling classification challenges on the EMNIST dataset.
 - **Key Features**:
     - Statistical analysis and visualization to uncover patterns and feature relationships
