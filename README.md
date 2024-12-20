@@ -11,7 +11,7 @@ Each project is organized into a separate folder containing all relevant code, d
 - **Key Features**:
   - Automated ingestion, transformation, extraction, model training, and evaluation for house price prediction.
   - Highly configurable custom ETL logic, model selection, and evaluation metrics via configuration files.
-  - Robust parsing, and dynamic data handling, error logging, and CI/CD integration
+  - Robust parsing, and dynamic data handling, error handling including error logging
   - Scalable and extensible modular architecture for production-ready deployment
 
 ### 2. EMNIST Classification Project
