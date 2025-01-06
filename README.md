@@ -4,9 +4,9 @@ Welcome to my portfolio of projects, designed to demonstrate my skills in **mach
 
 ## Repository Structure
 
-Each project is organized into a separate folder containing all relevant code, documentation, and results. Below is a brief overview of the projects included and the upcoming ones:
+Each project is maintained in a separate folder containing all relevant code, documentation, and results. Additionally, every project is hosted in an independent repository for better modularity and ease of access. You can find the standalone repository for each project by clicking on the repository name provided below.
 
-### 1. Housing Price Prediction
+### 1. [Housing Price Prediction](https://github.com/MiladKetabGhale/House_Price_Prediction/tree/main)
 - **Focus**: End-to-end pipeline for predicting housing prices using regression models.
 - **Key Features**:
   - Automated ingestion, transformation, extraction, model training, and evaluation for house price prediction.
@@ -14,7 +14,7 @@ Each project is organized into a separate folder containing all relevant code, d
   - Robust parsing, and dynamic data handling, error handling including error logging
   - Scalable and extensible modular architecture for production-ready deployment
 
-### 2. EMNIST Classification Project
+### 2. [EMNIST Classification Project](https://github.com/MiladKetabGhale/Image_Classification)
 - **Focus**: Tackling classification challenges on the EMNIST dataset.
 - **Key Features**:
     - Statistical analysis and visualization to uncover patterns and feature relationships
