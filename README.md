@@ -34,7 +34,7 @@ Each project is maintained in a separate folder containing all relevant code, do
     - Automated Model Training & Inference: Uses SageMaker to train and evaluate the model, then deploys an inference script
     - Contextualizes Fraud Detection, the choice of metrics, and evaluations as part of Security Risk Management
 
-### 4. Financial Forecasting Using Deep Nerual Networks *(upcoming in March)*
+### 4. Financial Forecasting Using Deep Neural Networks *(upcoming in March)*
 - **Focus**: Focuses on building an end-to-end forecasting pipeline using neural networks, containerization with Docker, advanced hyperparameter tuning with Optuna, and comprehensive experiment tracking with MLflow—all orchestrated via Airflow for scalable, production-ready solutions.
 
 ## License
