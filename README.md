@@ -1,4 +1,4 @@
-# Data Science, Machine Learning Engineering, and Data Engineering Projects
+# Machine Learning Engineering And Data Science Projects
 
 Welcome to my portfolio of projects, designed to demonstrate my skills in **machine learning engineering**, **data science**, and elements of **data engineering**. This repository contains standalone projects, each showcasing a specific set of capabilities, methodologies, and tools. The projects highlight the ability to build end-to-end data pipelines, engineer scalable solutions for machine learning tasks, and solve complex analytical problems.
 
