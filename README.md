@@ -24,8 +24,15 @@ Each project is maintained in a separate folder containing all relevant code, do
     - Feature selection and parallel training to handle costly computational complexity of some models
     - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques
 
-### 3. Fully Automated Pipelined System For Anomaly Detection Using AWS, Spark, and Boto3 *(upcoming in January)*
+### 3. [Fraud Detection System Using Machine Learning, AWS, And Spark](https://github.com/MiladKetabGhale/Credit_Card_Fraud_Detection_System)
 - **Focus**: Integrating AWS services with Spark using Boto3 to build scalable, automated pipelines for anomaly detection
+- ** Key Features**:
+    - Data Preprocessing with PySpark: Scales, normalizes, and transforms the dataset before training
+    - Multiple Sampling Techniques: Implements 9 sampling methods, including SMOTE variants and under-sampling techniques, to improve fraud detection
+    - Cross-Validation & Hyperparameter Tuning: Fine-tunes the XGBoost model for optimal performance
+    - AWS-Based Automated Deployment: Deploys the fraud detection system using AWS Glue, SageMaker, S3, and IAM through a fully automated Bash script
+    - Automated Model Training & Inference: Uses SageMaker to train and evaluate the model, then deploys an inference script
+    - Contextualizes Fraud Detection, the choice of metrics, and evaluations as part of Security Risk Management
 
 ### 4. Survival Analysis Using Healthcare Dataset *(upcoming in February)*
 - **Focus**: Focuses on use of advanced statistical analysis frameworks and tools in combination with real and synthetic healthcare data for survival analysis.
