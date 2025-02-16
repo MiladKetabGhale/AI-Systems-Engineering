@@ -34,8 +34,8 @@ Each project is maintained in a separate folder containing all relevant code, do
     - Automated Model Training & Inference: Uses SageMaker to train and evaluate the model, then deploys an inference script
     - Contextualizes Fraud Detection, the choice of metrics, and evaluations as part of Security Risk Management
 
-### 4. Survival Analysis Using Healthcare Dataset *(upcoming in February)*
-- **Focus**: Focuses on use of advanced statistical analysis frameworks and tools in combination with real and synthetic healthcare data for survival analysis.
+### 4. Financial Forecasting Using Deep Nerual Networks *(upcoming in March)*
+- **Focus**: Focuses on building an end-to-end forecasting pipeline using neural networks, containerization with Docker, advanced hyperparameter tuning with Optuna, and comprehensive experiment tracking with MLflow—all orchestrated via Airflow for scalable, production-ready solutions.
 
 ## License
 All projects in this portfolio are licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).  
