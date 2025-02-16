@@ -26,7 +26,7 @@ Each project is maintained in a separate folder containing all relevant code, do
 
 ### 3. [Fraud Detection System Using Machine Learning, AWS, And Spark](https://github.com/MiladKetabGhale/Credit_Card_Fraud_Detection_System)
 - **Focus**: Integrating AWS services with Spark using Boto3 to build scalable, automated pipelines for anomaly detection
-- ** Key Features**:
+- **Key Features**:
     - Data Preprocessing with PySpark: Scales, normalizes, and transforms the dataset before training
     - Multiple Sampling Techniques: Implements 9 sampling methods, including SMOTE variants and under-sampling techniques, to improve fraud detection
     - Cross-Validation & Hyperparameter Tuning: Fine-tunes the XGBoost model for optimal performance
