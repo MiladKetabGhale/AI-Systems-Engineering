@@ -72,11 +72,10 @@ This project focuses on extracting and summarizing cybersecurity intelligence us
   - Encoder-decoder architecture with scaled dot-product attention and multi-head attention.
   - Configurable number of layers and attention heads (starting with 2–3 heads for prototyping).
 - **Tokenization and Embedding**: Handled externally to streamline model development.
-- **Output**: A functional Transformer capable of generating concise summaries of cybersecurity text.
-- **Dataset**: A moderately sized, domain-specific corpus.
+- **Output**: A functional Transformer capable of generating concise summaries of cybersecurity text and used as baseline for benchmarking the BART LLM below.
 
 #### Part 2: Fine-Tuning Pretrained LLMs (Hugging Face)
-- **Objective**: Fine-tune pretrained models like BART or T5 on the same cybersecurity dataset.
+- **Objective**: Fine-tune pretrained models (BART LLM) on the same cybersecurity dataset.
 - **Process**:
   - Dataset preprocessing and tokenization using Hugging Face Transformers.
   - Fine-tuning with a focus on performance, robustness, and generalization.
