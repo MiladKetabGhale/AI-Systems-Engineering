@@ -1,10 +1,10 @@
-# Machine Learning Engineering And Data Science Projects
+# Machine Learning Engineer • AI Engineer
 
 Welcome to my portfolio of projects, designed to demonstrate my skills in **machine learning engineering**, **data science**, and elements of **data engineering**. This repository contains standalone projects, each showcasing a specific set of capabilities, methodologies, and tools. The projects highlight the ability to build end-to-end data pipelines, engineer scalable solutions for machine learning tasks, and solve complex analytical problems.
 
 ## Repository Structure
 
-Each project is maintained in a separate folder containing all relevant code, documentation, and results. Additionally, every project is hosted in an independent repository for better modularity and ease of access. You can find the standalone repository for each project by clicking on the repository name provided below.
+Each project is hosted in an independent repository for better modularity and ease of access. You can find the standalone repository for each project by clicking on the repository name provided below.
 
 ### 1. [End-to-end Machine Learning Pipeline](https://github.com/MiladKetabGhale/House_Price_Prediction/tree/main)
 - **Focus**: End-to-end pipeline for predicting housing prices using regression models.
