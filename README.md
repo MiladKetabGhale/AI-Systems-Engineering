@@ -43,7 +43,7 @@ Each project is hosted in an independent repository for better modularity and ea
 
 ### DataOps & MLOps Infrastructure
 
-#### 4. DataOps Pipeline for API-based ETL *(Upcoming April)*
+#### 4. MLOps Pipeline for API-based ETL *(Upcoming April)*
 
 **Overview**  
 This project involves building a modular, extensible DataOps pipeline for ingesting and processing data from multiple APIs. The architecture emphasizes clean separation of concerns, robust error handling, and comprehensive test coverage.
