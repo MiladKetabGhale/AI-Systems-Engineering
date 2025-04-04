@@ -41,7 +41,7 @@ Each project is hosted in an independent repository for better modularity and ea
 
 ---
 
-### DataOps & MLOps Infrastructure
+### MLOps Infrastructure
 
 #### 4. MLOps Pipeline for API-based ETL *(Upcoming April)*
 
