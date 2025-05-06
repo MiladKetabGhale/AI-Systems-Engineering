@@ -8,42 +8,27 @@ Each project is hosted in an independent repository for better modularity and ea
 
 ---
 
-### Machine Learning Pipelines & Analysis
+### Deep Learning, NLP, and LLMs
 
-#### 1. [Fraud Detection System Using Machine Learning, AWS, And Spark](https://github.com/MiladKetabGhale/Credit_Card_Fraud_Detection_System)
-- **Focus**: Integrating AWS services with Spark to build scalable, automated pipelines for anomaly detection
-- **Key Features**:
-    - Data Preprocessing with PySpark: Scales, normalizes, and transforms the dataset before training
-    - Multiple Sampling Techniques: Implements 9 sampling methods, including SMOTE variants and under-sampling techniques, to improve fraud detection
-    - Cross-Validation & Hyperparameter Tuning: Fine-tunes the XGBoost model for optimal performance
-    - AWS-Based Automated Deployment: Deploys the fraud detection system using AWS Glue, SageMaker, S3, and IAM through a fully automated Bash script
-    - Automated Model Training & Inference: Uses SageMaker to train and evaluate the model, then deploys an inference script
-    - Automated logging, tracking, and model versioning using MLflow, together with hyperparamter tuning automation using Optuna
-    - Contextualizes Fraud Detection, the choice of metrics, and evaluations as part of Security Risk Management
+### 1. [Cybersecurity Summarization System Using Transformers](https://github.com/MiladKetabGhale/LLM_Cybersecurity_Summarizer)
 
-#### 2. [Image Classification Project](https://github.com/MiladKetabGhale/Image_Classification)
-- **Focus**: Tackling classification challenges on the EMNIST dataset.
+- **Focus**: Building a domain-adapted NLP system for summarizing cybersecurity knowledge using GPT-2 and Transformer-based architectures.
 - **Key Features**:
-    - Statistical analysis and visualization to uncover patterns and feature relationships
-    - Training, evaluation, and tuning multiple classifiers to establish performance benchmarks
-    - thorough error analysis and reliability analysis including tools such as SHAP, calibration curves, and Brier scores. Detailed timing analysis for model training
-    - Producing top classifer using ensemble techniques against classification performance metrics
-    - Feature selection and parallel training to handle costly computational complexity of some models
-    - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques
+    - **Custom Dataset Creation**: Curated a dataset by scraping 435 MITRE ATT&CK entries; generated reference summaries using a locally deployed Distilled DeepSeek R1 (LLaMA 7B); validated summary quality with statistical tests (t-test, KS-test, p > 0.05) and human evaluation.
+    - **Ground-Up GPT-2 Implementation**: Built and pre-trained a custom GPT-2 model from scratch on WikiText-103 before fine-tuning on the cybersecurity dataset.
+    - **Fine-Tuning & Benchmarking**: Fine-tuned both custom and pretrained GPT-2 models; benchmarked against BART and Pegasus zero-shot summarization, achieving competitive ROUGE scores with significantly smaller model sizes.
+    - **LoRA Fine-Tuning Efficiency**: Demonstrated LoRA fine-tuning achieving ~99% of full fine-tuned performance (ROUGE-1) with <1% of parameters updated.
+    - **Modular Architecture**: Independent modules for data preprocessing, model training, fine-tuning, and evaluation; each documented with detailed module-level documentation.
+    - **Performance Engineering**: Optimized training runtime by ~3× on Apple M1 hardware via multithreaded data loading and GPU utilization improvements.
+    - **Three-Tier Documentation**: Provides README-level overview, module-level `documentation.md`, and function-level docstrings for extensibility and developer onboarding.
 
-#### 3. [End-to-end Machine Learning Pipeline](https://github.com/MiladKetabGhale/House_Price_Prediction/tree/main)
-- **Focus**: End-to-end pipeline for predicting housing prices using regression models.
-- **Key Features**:
-  - Automated ingestion, transformation, extraction, model training, and evaluation for house price prediction.
-  - Highly configurable custom ETL logic, model selection, and evaluation metrics via configuration files.
-  - Robust parsing, and dynamic data handling, error handling including error logging
-  - Scalable and extensible modular architecture for production-ready deployment
+**Goal**: Deliver a reproducible, efficient, and modular system bridging general-purpose language models and specialized cybersecurity summarization needs, validated against both statistical and human benchmarks.
 
 ---
 
 ### MLOps Infrastructure
 
-#### 4. [MLOps Pipeline System for API-based ETL](https://github.com/MiladKetabGhale/FinTech-API-Based-ETL-Framework)
+#### 2. [MLOps Pipeline System for API-based ETL](https://github.com/MiladKetabGhale/FinTech-API-Based-ETL-Framework)
 
 **Overview**  
 This project involves building a modular, extensible DataOps pipeline for ingesting and processing data from multiple APIs. The architecture emphasizes clean separation of concerns, robust error handling, and comprehensive test coverage.
@@ -56,8 +41,8 @@ This project involves building a modular, extensible DataOps pipeline for ingest
 - **Airflow Integration**: Utilizes Airflow for orchestrating, scheduling, and monitoring complex ETL workflows.
 
 **Testing Architecture**
-- `tests/base/`: Source-agnostic unit tests focusing on network behavior, retries, timeouts, and common ingestion issues. Each test resides in its own file for clarity and reuse.
-- `tests/plugins/`: Source-specific tests validating data integrity, edge cases, and transformation logic tailored to individual APIs.
+- Source-agnostic unit tests focusing on network behavior, retries, timeouts, and common ingestion issues. Each test resides in its own file for clarity and reuse.
+- Source-specific tests validating data integrity, edge cases, and transformation logic tailored to individual APIs.
 - **Fixtures**: Used to decouple test logic and ensure smooth plugin integration.
 
 **Logging Strategy and Error Handling**
@@ -68,32 +53,28 @@ A production-grade, test-driven API ingestion and processing system, deployable 
 
 ---
 
-### Deep Learning & NLP
+### Machine Learning Pipelines & Analysis
 
-#### 5. NLP for Cybersecurity Summarization Using Transformers *(Upcoming Mid May)*
+#### 3. [Fraud Detection System Using Machine Learning, AWS, And Spark](https://github.com/MiladKetabGhale/Credit_Card_Fraud_Detection_System)
+- **Focus**: Integrating AWS services with Spark to build scalable, automated pipelines for anomaly detection
+- **Key Features**:
+    - Data Preprocessing with PySpark: Scales, normalizes, and transforms the dataset before training
+    - Multiple Sampling Techniques: Implements 9 sampling methods, including SMOTE variants and under-sampling techniques, to improve fraud detection
+    - Cross-Validation & Hyperparameter Tuning: Fine-tunes the XGBoost model for optimal performance
+    - AWS-Based Automated Deployment: Deploys the fraud detection system using AWS Glue, SageMaker, S3, and IAM through a fully automated Bash script
+    - Automated Model Training & Inference: Uses SageMaker to train and evaluate the model, then deploys an inference script
+    - Automated logging, tracking, and model versioning using MLflow, together with hyperparamter tuning automation using Optuna
+    - Contextualizes Fraud Detection, the choice of metrics, and evaluations as part of Security Risk Management
 
-**Overview**  
-This project focuses on extracting and summarizing cybersecurity intelligence using Transformer-based architectures. It involves both building a custom Transformer model and fine-tuning state-of-the-art pretrained LLMs.
-
-##### Part 1: Custom Transformer Implementation
-- **Objective**: Implement a Transformer architecture from scratch tailored for cybersecurity summarization.
-- **Scope**:
-  - Encoder-decoder architecture with scaled dot-product attention and multi-head attention.
-  - Configurable number of layers and attention heads (starting with 2–3 heads for prototyping).
-- **Tokenization and Embedding**: Handled externally to streamline model development.
-- **Output**: A functional Transformer capable of generating concise summaries of cybersecurity text and used as baseline for benchmarking the BART LLM below.
-
-##### Part 2: Fine-Tuning Pretrained LLMs (Hugging Face)
-- **Objective**: Fine-tune pretrained models (BART LLM) on the same cybersecurity dataset.
-- **Process**:
-  - Dataset preprocessing and tokenization using Hugging Face Transformers.
-  - Fine-tuning with a focus on performance, robustness, and generalization.
-- **Evaluation**: Direct performance comparison with the custom Transformer using standard summarization metrics (e.g., ROUGE, BLEU).
-- **Deployment Readiness**: Code structured for integration into a production pipeline or as a service endpoint.
-
-**Goal**  
-Deliver both a ground-up and transfer learning-based solution for cybersecurity summarization, showcasing deep understanding of NLP architecture and applied modeling.
-
+#### 4. [Image Classification Project](https://github.com/MiladKetabGhale/Image_Classification)
+- **Focus**: Tackling classification challenges on the EMNIST dataset.
+- **Key Features**:
+    - Statistical analysis and visualization to uncover patterns and feature relationships
+    - Training, evaluation, and tuning multiple classifiers to establish performance benchmarks
+    - thorough error analysis and reliability analysis including tools such as SHAP, calibration curves, and Brier scores. Detailed timing analysis for model training
+    - Producing top classifer using ensemble techniques against classification performance metrics
+    - Feature selection and parallel training to handle costly computational complexity of some models
+    - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques 
 ---
 
 ## License
