@@ -38,7 +38,6 @@ This project involves building a modular, extensible DataOps pipeline for ingest
 - **Validation Layer**: Performs schema validation and logical checks on incoming data before transformation.
 - **Transformation Layer**: Normalizes and processes raw API responses into clean, analysis-ready datasets.
 - **Dockerization**: Encapsulates services into Docker containers for consistent deployment and simplified environment management.
-- **Airflow Integration**: Utilizes Airflow for orchestrating, scheduling, and monitoring complex ETL workflows.
 
 **Testing Architecture**
 - Source-agnostic unit tests focusing on network behavior, retries, timeouts, and common ingestion issues. Each test resides in its own file for clarity and reuse.
@@ -71,7 +70,7 @@ A production-grade, test-driven API ingestion and processing system, deployable 
 - **Key Features**:
     - Statistical analysis and visualization to uncover patterns and feature relationships
     - Training, evaluation, and tuning multiple classifiers to establish performance benchmarks
-    - thorough error analysis and reliability analysis including tools such as SHAP, calibration curves, and Brier scores. Detailed timing analysis for model training
+    - Thorough error analysis and reliability analysis including tools such as SHAP, calibration curves, and Brier scores. Detailed timing analysis for model training
     - Producing top classifer using ensemble techniques against classification performance metrics
     - Feature selection and parallel training to handle costly computational complexity of some models
     - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques 
