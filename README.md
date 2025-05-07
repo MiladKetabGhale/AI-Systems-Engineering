@@ -10,7 +10,7 @@ Each project is hosted in an independent repository for better modularity and ea
 
 ### Deep Learning, NLP, and LLMs
 
-### 1. [Cybersecurity Summarization System Using Transformers](https://github.com/MiladKetabGhale/LLM_Cybersecurity_Summarizer)
+### 1. [LLM Cybersecurity Summarization System](https://github.com/MiladKetabGhale/LLM_Cybersecurity_Summarizer)
 
 - **Focus**: Building a domain-adapted NLP system for summarizing cybersecurity knowledge using GPT-2 and Transformer-based architectures.
 - **Key Features**:
