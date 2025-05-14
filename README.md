@@ -6,6 +6,19 @@ Welcome to my portfolio of projects, designed to demonstrate my skills in **mach
 
 Each project is hosted in an independent repository for better modularity and ease of access. You can find the standalone repository for each project by clicking on the repository name provided below.
 
+## 🛠️ Tech Stack
+
+| Category | Tools & Libraries |
+|----------|-------------------|
+| **Languages** | Python • Bash • SQL |
+| **AI / ML** | PyTorch • Hugging Face Transformers • Scikit-learn • Optuna • SHAP • DeepSeek R1 (LLaMA 7B, distilled) |
+| **Cloud & MLOps** | AWS (S3 • SageMaker • Glue • IAM) • Docker • GitHub Actions • MLflow • CI/CD automation • Bash scripting|
+| **Distributed & Big Data** | Apache Spark • PySpark • Pandas • NumPy |
+| **Model Optimisation** | LoRA • Distillation • Quantisation • Dropout • Batch Normalisation |
+| **Testing & Logging** | Pytest • Fixtures • Structured CLI logging • Custom error handling |
+
+<sub>*Each project uses a subset of these tools as required.*</sub>
+
 ---
 
 ### Deep Learning, NLP, and LLMs
