@@ -2,7 +2,7 @@
 #  _config.yml  – GitHub Pages site settings
 # ──────────────────────────────────────────────
 
-title: ""                                # disable auto-inserted H1
+title: "Milad Ketabi"                                # disable auto-inserted H1
 description: "Portfolio of Milad Ketabi – ML & AI Engineering"
 theme: minima                             # or any other GitHub-hosted theme
 
