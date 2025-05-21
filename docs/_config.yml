@@ -6,6 +6,8 @@ title: "Milad Ketabi"                                # disable auto-inserted H1
 description: "Portfolio of Milad Ketabi – ML & AI Engineering"
 theme: minima                             # or any other GitHub-hosted theme
 
+show_title: true
+
 # Optional: use GitHub-flavoured Markdown everywhere
 markdown: kramdown
 kramdown:
