@@ -1,6 +1,6 @@
 title: "Milad Ketabi"
 description: "Portfolio of Milad Ketabi – ML & AI Engineering"
-theme: cayman
+theme: jekyll-theme-modernist
 
 markdown: kramdown
 kramdown:
