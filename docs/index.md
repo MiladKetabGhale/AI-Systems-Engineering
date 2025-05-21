@@ -22,7 +22,7 @@ Each project is hosted in an independent repository for better modularity and ea
 
 ### Deep Learning, NLP, and LLMs
 
-### 1. [LLM Cybersecurity Summarization System](https://github.com/MiladKetabGhale/LLM_Cybersecurity_Summarizer)
+### 🔗 [LLM Cybersecurity Summarization System](https://github.com/MiladKetabGhale/LLM_Cybersecurity_Summarizer)
 
 - **Focus**: Building a domain-adapted NLP system for summarizing cybersecurity knowledge using GPT-2 and Transformer-based architectures.
 - **Key Features**:
@@ -40,7 +40,7 @@ Each project is hosted in an independent repository for better modularity and ea
 
 ### MLOps Infrastructure
 
-#### 2. [MLOps Pipeline System for API-based ETL](https://github.com/MiladKetabGhale/FinTech-API-Based-ETL-Framework)
+#### 🔗 [MLOps Pipeline System for API-based ETL](https://github.com/MiladKetabGhale/FinTech-API-Based-ETL-Framework)
 
 **Overview**  
 This project involves building a modular, extensible DataOps pipeline for ingesting and processing data from multiple APIs. The architecture emphasizes clean separation of concerns, robust error handling, and comprehensive test coverage.
@@ -66,7 +66,7 @@ A production-grade, test-driven API ingestion and processing system, deployable 
 
 ### Machine Learning Pipelines & Analysis
 
-#### 3. [Fraud Detection System Using Machine Learning, AWS, And Spark](https://github.com/MiladKetabGhale/Credit_Card_Fraud_Detection_System)
+#### 🔗 [Fraud Detection System Using Machine Learning, AWS, And Spark](https://github.com/MiladKetabGhale/Credit_Card_Fraud_Detection_System)
 - **Focus**: Integrating AWS services with Spark to build scalable, automated pipelines for anomaly detection
 - **Key Features**:
     - Data Preprocessing with PySpark: Scales, normalizes, and transforms the dataset before training
@@ -77,7 +77,7 @@ A production-grade, test-driven API ingestion and processing system, deployable 
     - Automated logging, tracking, and model versioning using MLflow, together with hyperparamter tuning automation using Optuna
     - Contextualizes Fraud Detection, the choice of metrics, and evaluations as part of Security Risk Management
 
-#### 4. [Image Classification Project](https://github.com/MiladKetabGhale/Image_Classification)
+#### 🔗 [Image Classification Project](https://github.com/MiladKetabGhale/Image_Classification)
 - **Focus**: Tackling classification challenges on the EMNIST dataset.
 - **Key Features**:
     - Statistical analysis and visualization to uncover patterns and feature relationships
