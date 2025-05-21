@@ -1,6 +1,6 @@
 # Machine Learning Engineer • AI Engineer
 
-Welcome to my portfolio of projects, designed to demonstrate my skills in **machine learning engineering** and **AI engineering**. This repository contains standalone projects, each showcasing a specific set of capabilities, methodologies, and tools. The projects highlight the ability to build end-to-end data pipelines, engineer scalable solutions for machine learning tasks, and solve complex analytical problems.
+Welcome to my AI/ML engineering portfolio, where I showcase modular, production-grade systems at the intersection of machine learning, AI, and cloud infrastructure. Each project is designed to highlight core strengths in scalable ML pipeline development, model optimization, and MLOps practices. From fine-tuned LLMs for cybersecurity to end-to-end fraud detection systems deployed on AWS.
 
 ## Repository Structure
 
