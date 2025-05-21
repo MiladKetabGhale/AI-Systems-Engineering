@@ -83,7 +83,8 @@ A production-grade, test-driven API ingestion and processing system, deployable 
 - **Key Features**:
     - Statistical analysis and visualization to uncover patterns and feature relationships
     - Training, evaluation, and tuning multiple classifiers to establish performance benchmarks
-    - Thorough error analysis and reliability analysis including tools such as SHAP, calibration curves, and Brier scores. Detailed timing analysis for model training
+    - Thorough error analysis and reliability analysis including tools such as SHAP, calibration curves, and Brier scores.
+    - Detailed timing analysis for model training
     - Producing top classifer using ensemble techniques against classification performance metrics
     - Feature selection and parallel training to handle costly computational complexity of some models
     - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques 
