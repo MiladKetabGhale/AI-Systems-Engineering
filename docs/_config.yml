@@ -1,19 +1,11 @@
-# ──────────────────────────────────────────────
-#  _config.yml  – GitHub Pages site settings
-# ──────────────────────────────────────────────
-
-title: "Milad Ketabi"                                # disable auto-inserted H1
+title: "Milad Ketabi"
 description: "Portfolio of Milad Ketabi – ML & AI Engineering"
-theme: minima                             # or any other GitHub-hosted theme
+theme: cayman
 
-show_title: true
-
-# Optional: use GitHub-flavoured Markdown everywhere
 markdown: kramdown
 kramdown:
   input: GFM
 
-# Optional: default plugins that GitHub Pages supports
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
