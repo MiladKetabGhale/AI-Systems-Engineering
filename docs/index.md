@@ -1,4 +1,3 @@
-# Milad Ketabi- AI/ML Engineering Portfolio
 
 Welcome to my AI/ML engineering portfolio, where I showcase modular, production-grade systems at the intersection of machine learning, AI, and cloud infrastructure. Each project is designed to highlight core strengths in scalable ML pipeline development, model optimization, and MLOps practices. From fine-tuned LLMs for cybersecurity to end-to-end fraud detection systems deployed on AWS
 
