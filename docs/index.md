@@ -87,7 +87,7 @@ A production-grade, test-driven API ingestion and processing system, deployable 
     - Detailed timing analysis for model training
     - Producing top classifer using ensemble techniques against classification performance metrics
     - Feature selection and parallel training to handle costly computational complexity of some models
-    - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques 
+    - Tackling class imbalance with SMOTE, class weighting, and augmentation techniques
 ---
 
 ## License
